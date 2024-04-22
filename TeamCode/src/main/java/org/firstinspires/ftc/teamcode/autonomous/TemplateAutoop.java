@@ -19,7 +19,6 @@ import org.firstinspires.ftc.teamcode.modules.trajectorysequence.TrajectorySeque
 @Disabled /* COMMENT THIS OUT WHEN YOU CREATE A NEW OPMODE */
 public class TemplateAutoop extends LinearOpMode{
 
-    boolean finished = false;
 
     @Override
     public void runOpMode() {
