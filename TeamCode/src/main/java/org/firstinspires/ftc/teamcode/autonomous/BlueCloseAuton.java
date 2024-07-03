@@ -161,15 +161,20 @@ public class BlueCloseAuton extends LinearOpMode{
                 .build();
 
         TrajectorySequence CenterWithCycle = robot.drive.trajectorySequenceBuilder(startLocation)
+                /*
                 .addDisplacementMarker(() -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.flipDeposit();
                 })
+
+                 */
                 .splineToConstantHeading(new Vector2d(14.00, 31.55), Math.toRadians(-90))   // Drop pixel
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(17.00, 41), Math.toRadians(-90))   // Reverse
                 // .splineToLinearHeading(new Pose2d(14.00, 41.00, Math.toRadians(-45)), Math.toRadians(45))
-                .splineTo(new Vector2d(backBoardX, 35.00), Math.toRadians(0.00))                       // Go to backboard
+                .splineTo(new Vector2d(backBoardX, 35.00), Math.toRadians(0.00)) // Go to backboard
+                .waitSeconds(3)
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.intake.setIntakePower(0);
                     robot.slides.statemachine.transition(
@@ -191,9 +196,12 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.slides.setTargetPosition(0);
                     robot.slides.setPower(0.8);
                 })
+
+                 */
                 .splineToConstantHeading(new Vector2d(45.00, 33.00), Math.toRadians(0.00)) // Reverse from backdrop
                 //  .splineToConstantHeading(new Vector2d(46.00, 43.0), Math.toRadians(0.00))
                 //.splineToConstantHeading(new Vector2d(53.43, 58.83), Math.toRadians(0.00))   // Park At backdrop
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     // Unpower slides
                     //   robot.slides.statemachine.transition(
@@ -201,18 +209,26 @@ public class BlueCloseAuton extends LinearOpMode{
                     // );
                     robot.slides.setPower(0);
                 })
+
+                 */
                 //Go to starter stack
                 // .splineToConstantHeading(new Vector2d(18.00, 58.83), Math.toRadians(0.00))   // Reverse from backdrop
-                .splineToConstantHeading(new Vector2d(20.00, 6.00), Math.toRadians(0.00))  // Align to the center of the field
+                .splineToConstantHeading(new Vector2d(20.00, 9.00), Math.toRadians(0.00))  // Align to the center of the field
                 // .splineToConstantHeading(new Vector2d(-32.00, 8.00), Math.toRadians(0.00))  // Go past the trusses
-                .splineToConstantHeading(new Vector2d(-43.00, 8.00), Math.toRadians(0.00))  // Align with starter stack
+                .splineToConstantHeading(new Vector2d(-43.00, 9.00), Math.toRadians(0.00))  // Align with starter stack
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.intake.setIntakePower(0.865);
                 })
-                .splineToConstantHeading(new Vector2d(-55.0, 6.25), Math.toRadians(0.00)) // Go into starter stack
+
+                 */
+                .waitSeconds(3)
+                .splineToConstantHeading(new Vector2d(-60.0, 12.25), Math.toRadians(0.00)) // Go into starter stack
                 .waitSeconds(0.75)
-                .splineToConstantHeading(new Vector2d(-45.00, 7.50), Math.toRadians(0.00)) // Reverse from  starter stack
+                .splineToConstantHeading(new Vector2d(-60.00, 9.50), Math.toRadians(0.00)) // Reverse from  starter stack
+                .waitSeconds(3)
                 .splineToConstantHeading(new Vector2d(15.00, 9.00), Math.toRadians(0.00))  // Align to the center of the field
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0.75, () -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.setIntakePower(-0.8);
@@ -221,7 +237,11 @@ public class BlueCloseAuton extends LinearOpMode{
                 .UNSTABLE_addTemporalMarkerOffset(0.11, () -> {
                     robot.intake.flipDeposit();
                 })
+
+                 */
                 .splineTo(new Vector2d(backBoardX+0.05, 35.00), Math.toRadians(0.00))
+                .waitSeconds(3)
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0.75, () -> {
                     robot.intake.setIntakePower(0);
                     robot.slides.setTargetPosition(-600);
@@ -241,7 +261,10 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.slides.setTargetPosition(0);
                     robot.slides.setPower(0.8);
                 })
+
+                 */
                 .splineToConstantHeading(new Vector2d(backBoardX+0.05, 7.85), Math.toRadians(0.00))  // Align to purple pixel on spike marker
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     // Unpower slides
                     robot.slides.statemachine.transition(
@@ -249,6 +272,8 @@ public class BlueCloseAuton extends LinearOpMode{
                     );
                     robot.slides.setPower(0);
                 })
+
+                 */
                 .build();
 
 
