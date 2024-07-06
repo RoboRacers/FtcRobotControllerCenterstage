@@ -302,17 +302,21 @@ public class BlueCloseAuton extends LinearOpMode{
 
 
         TrajectorySequence RightNoCycle = robot.drive.trajectorySequenceBuilder(startLocation)
+                /*
                 .addDisplacementMarker(() -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.flipDeposit();
                 })
-                .splineTo(new Vector2d(8, 39), Math.toRadians(-135))
+
+                 */
+                .splineTo(new Vector2d(6, 30), Math.toRadians(-135))
                 .waitSeconds(0.1)
                 .setReversed(true)
                 .splineTo(new Vector2d(30.00, 45), Math.toRadians(90))
                 .setReversed(false)
                 // Go to backboard
-                .splineTo(new Vector2d(backBoardX, 27.88), Math.toRadians(0.00))        //CHANGE THE BACKBOARD X BECAUSE GOING TO FORWARD
+                .splineTo(new Vector2d(backBoardX-6, 27.88), Math.toRadians(0.00))        //CHANGE THE BACKBOARD X BECAUSE GOING TO FORWARD
+                /*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.intake.setIntakePower(0);
                     robot.slides.statemachine.transition(
@@ -336,10 +340,25 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.slides.setPower(0.8);
 
                 })
-                .splineToConstantHeading(new Vector2d(backBoardX-5, 26.45), Math.toRadians(0.00))
+
+                 */
+                .splineToConstantHeading(new Vector2d(backBoardX-14, 26.45), Math.toRadians(0.00))
                 .waitSeconds(0.1)
-                .splineToConstantHeading(new Vector2d(44, 43.0), Math.toRadians(0.00))
-                .splineToConstantHeading(new Vector2d(50.43, 57.83), Math.toRadians(0.00))
+                .splineToConstantHeading(new Vector2d(20, 5), Math.toRadians(0.00))//retreat to middle of field
+                //add code to intake it here
+                .splineToConstantHeading(new Vector2d(-57, 15), Math.toRadians(0.00))//go to starter stack
+                .waitSeconds(0.2)
+                .splineToConstantHeading(new Vector2d(-55, 10), Math.toRadians(0.00))//go sideways to intake sideways
+                //add code to lock
+                //add code here to outtake extra
+                .splineToConstantHeading(new Vector2d(20, 10), Math.toRadians(0.00)) // go to middle-ish of field
+                .splineToConstantHeading(new Vector2d(backBoardX-6, 30), Math.toRadians(0.00))//go to right side of field
+                .splineToConstantHeading(new Vector2d(backBoardX-14, 35), Math.toRadians(0.00))
+
+
+                .splineToConstantHeading(new Vector2d(44, 43.0), Math.toRadians(0.00)) //park
+                .splineToConstantHeading(new Vector2d(50.43, 57.83), Math.toRadians(0.00)) //park more
+/*
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     // Unpower slides
                     robot.slides.statemachine.transition(
@@ -347,6 +366,8 @@ public class BlueCloseAuton extends LinearOpMode{
                     );
                     robot.slides.setPower(0);
                 })
+
+                 */
                 .build();
         // Close claw
 
