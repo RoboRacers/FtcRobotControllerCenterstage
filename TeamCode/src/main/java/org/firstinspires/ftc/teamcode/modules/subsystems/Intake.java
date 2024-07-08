@@ -52,7 +52,7 @@ public class Intake implements Subsystem {
 
     static double lockLowerClearPos = 0;
     static double lockLowerLockPos = 0.55;
-    static double lockHigherClearPos = 0.55;
+    static double lockHigherClearPos = 0.3;
     static double lockHigherLockPos = 0;
 
     /**
