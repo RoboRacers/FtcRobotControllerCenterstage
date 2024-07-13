@@ -322,6 +322,7 @@ public class BlueCloseAuton extends LinearOpMode{
 
 
                 .splineToConstantHeading(new Vector2d(backBoardX-10, 27.88), Math.toRadians(0.00))
+                //this is my change to the program
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(20, 5), Math.toRadians(0.00))//retreat to middle of field
                 //add code to intake it here
