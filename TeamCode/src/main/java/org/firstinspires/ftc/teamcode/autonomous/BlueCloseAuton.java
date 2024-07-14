@@ -79,6 +79,13 @@ public class BlueCloseAuton extends LinearOpMode{
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(27.30, 50.00), Math.toRadians(-90))
                 .waitSeconds(0.1)
+                .splineTo(new Vector2d(24, 45), Math.toRadians(0.00))//go to drone shoot
+                .waitSeconds(1)
+                .UNSTABLE_addTemporalMarkerOffset(0.5, () -> {
+                    robot.drone.actuationServo.setPwmEnable();
+                    robot.drone.fireDrone(true);
+                })
+                .waitSeconds(1)
                 // Go to backboard
                 .splineTo(new Vector2d(backBoardX-2, 38.5), Math.toRadians(0.00))       //CHANGE BACKBOARD X BECAUSE TOO CLOSE TO BACKBOARD
 
@@ -183,6 +190,14 @@ public class BlueCloseAuton extends LinearOpMode{
                 .splineToConstantHeading(new Vector2d(14.00, 33.55), Math.toRadians(-90))   // Drop pixel
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(20.00, 41), Math.toRadians(-90))   // Reverse
+                .splineTo(new Vector2d(26, 45), Math.toRadians(0.00))//go to drone shoot
+                .waitSeconds(0.5)
+                .UNSTABLE_addTemporalMarkerOffset(0.0, () -> {
+                    robot.drone.actuationServo.setPwmEnable();
+                    robot.drone.fireDrone(true);
+                })
+                .waitSeconds(0.5)
+
                 .splineTo(new Vector2d(backBoardX-2, 35.00), Math.toRadians(0.00)) // Go to backboard
 
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
@@ -192,6 +207,7 @@ public class BlueCloseAuton extends LinearOpMode{
                     );
                     robot.slides.setTargetPosition(-560);
                     robot.slides.setPower(0.8);
+                    robot.drone.fireDrone(false);
                 })
                 .waitSeconds(0.3)
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
@@ -291,10 +307,19 @@ public class BlueCloseAuton extends LinearOpMode{
                 .splineTo(new Vector2d(6, 33), Math.toRadians(-135))
                 .waitSeconds(0.1)
                 .setReversed(true)
-                .splineTo(new Vector2d(30.00, 45), Math.toRadians(90))
+                .splineTo(new Vector2d(30.00, 45), Math.toRadians(180.0))
                 .setReversed(false)
+                .waitSeconds(0.25)
+                //.splineTo(new Vector2d(30, 48), Math.toRadians(0.00))//go to drone shoot
+                .waitSeconds(0.5)
+                .UNSTABLE_addTemporalMarkerOffset(0, () -> {
+                    robot.drone.actuationServo.setPwmEnable();
+                    robot.drone.fireDrone(true);
+                })
+                .waitSeconds(0.5)
+
                 // Go to backboard
-                .splineTo(new Vector2d(backBoardX-0.5, 27.88), Math.toRadians(0.00))        //CHANGE THE BACKBOARD X BECAUSE GOING TO FORWARD
+                .splineToConstantHeading(new Vector2d(backBoardX-0.5, 30), Math.toRadians(0.00))        //CHANGE THE BACKBOARD X BECAUSE GOING TO FORWARD
 
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.intake.setIntakePower(0);
@@ -304,6 +329,7 @@ public class BlueCloseAuton extends LinearOpMode{
 
                     robot.slides.setTargetPosition(-570);
                     robot.slides.setPower(0.8);
+                    robot.drone.fireDrone(false);
 
                 })
                 .waitSeconds(.5)
@@ -321,7 +347,7 @@ public class BlueCloseAuton extends LinearOpMode{
                 })
 
 
-                .splineToConstantHeading(new Vector2d(backBoardX-10, 27.88), Math.toRadians(0.00))
+                .splineToConstantHeading(new Vector2d(backBoardX-10, 30), Math.toRadians(0.00))
                 //this is my change to the program
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(20, 5), Math.toRadians(0.00))//retreat to middle of field
