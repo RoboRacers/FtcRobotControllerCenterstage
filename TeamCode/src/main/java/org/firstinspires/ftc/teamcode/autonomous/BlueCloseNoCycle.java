@@ -26,8 +26,8 @@ import java.util.List;
 // Localization is doesn't show drift, follower if it does
 
 @Config
-@Autonomous(name = "Blue Close close auton", group = "16481-Centerstage")
-public class BlueCloseAuton extends LinearOpMode{
+@Autonomous(name = "Blue Close close auton NO CYCLE", group = "16481-Centerstage")
+public class BlueCloseNoCycle extends LinearOpMode{
 
     RobotCore robot;
 
@@ -117,6 +117,7 @@ public class BlueCloseAuton extends LinearOpMode{
 
 
                 .splineToConstantHeading(new Vector2d(backBoardX-10, 38.5 ), Math.toRadians(0.00))
+                /*
                 .waitSeconds(0.2)
                 .splineToConstantHeading(new Vector2d(30, 5), Math.toRadians(0.00))//retreat to middle of field
                 //add code to intake it here
@@ -164,6 +165,8 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.slides.setTargetPosition(0);
                     robot.slides.setPower(0.8);
                 })
+
+                 */
                 //.splineToConstantHeading(new Vector2d(46.50, 43.0), Math.toRadians(0.00)) //go to park
                 .splineToConstantHeading(new Vector2d(53.43, 55.83), Math.toRadians(0.00)) //go to park more
 
@@ -227,6 +230,7 @@ public class BlueCloseAuton extends LinearOpMode{
                 })
 
                 .splineToConstantHeading(new Vector2d(backBoardX-10, 35.00), Math.toRadians(0.00)) // Reverse from backdrop
+/*
                 .splineToConstantHeading(new Vector2d(30.00, 10.00), Math.toRadians(0.00)) // Reverse from backdrop
                 //  .splineToConstantHeading(new Vector2d(46.00, 43.0), Math.toRadians(0.00))
                 //.splineToConstantHeading(new Vector2d(53.43, 58.83), Math.toRadians(0.00))   // Park At backdrop
@@ -283,6 +287,8 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.intake.engageLock(false, true);
                 })
 
+
+ */
                 .splineToConstantHeading(new Vector2d(45.50, 35.0), Math.toRadians(0.00)) //go to park
                 .splineToConstantHeading(new Vector2d(53.43, 55.83), Math.toRadians(0.00)) //go to park more
 
@@ -349,7 +355,9 @@ public class BlueCloseAuton extends LinearOpMode{
                 })
 
 
+
                 .splineToConstantHeading(new Vector2d(backBoardX-10, 30), Math.toRadians(0.00))
+                /*
                 //this is my change to the program
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(20, 5), Math.toRadians(0.00))//retreat to middle of field
@@ -395,6 +403,8 @@ public class BlueCloseAuton extends LinearOpMode{
                     robot.slides.setPower(0.8);
                     robot.intake.flipIntake();
                 })
+
+                 */
                 //.splineToConstantHeading(new Vector2d(44, 43.0), Math.toRadians(0.00)) //park
                 .splineToConstantHeading(new Vector2d(50.43, 55.83), Math.toRadians(0.00)) //park more
 

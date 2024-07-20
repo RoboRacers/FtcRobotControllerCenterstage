@@ -93,7 +93,7 @@ public class BlueFarAuton extends LinearOpMode{
                 .setReversed(true)
                 .splineTo(new Vector2d(-50.64, 48.50), Math.toRadians(-270))
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
-                    robot.intake.setIntakePower(0.5);
+                    robot.intake.setIntakePower(0.35);
                 })
                 .splineTo(new Vector2d(-62.00, 40.53), Math.toRadians(180))
                 // Sweep the stack
@@ -170,7 +170,7 @@ public class BlueFarAuton extends LinearOpMode{
                 //move to starter stack
                 .setReversed(true)
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
-                    robot.intake.setIntakePower(0.5);
+                    robot.intake.setIntakePower(0.35);
                 })
                 .splineTo(new Vector2d(-62.00, 40.53), Math.toRadians(180))
                 // Sweep the stack
@@ -230,7 +230,7 @@ public class BlueFarAuton extends LinearOpMode{
                     robot.slides.setPower(0.8);
 
                 })
-                .splineToConstantHeading(new Vector2d(backBoardX-3, 32.55), Math.toRadians(0))//in front of backdrop
+                .splineToConstantHeading(new Vector2d(backBoardX-3, 35.55), Math.toRadians(0))//in front of backdrop
                 .UNSTABLE_addTemporalMarkerOffset(0.33, () -> {
                     //robot.drive.followTrajectorySequenceAsync(CenterCycle);
                 })

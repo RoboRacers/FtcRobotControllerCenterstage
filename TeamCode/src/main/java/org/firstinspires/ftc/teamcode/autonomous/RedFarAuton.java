@@ -169,7 +169,7 @@ public class RedFarAuton extends LinearOpMode{
                 //move to starter stack
                 .setReversed(true)
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
-                    robot.intake.setIntakePower(0.5);
+                    robot.intake.setIntakePower(0.25);
                 })
                 .splineTo(new Vector2d(-59.58, -40.53), Math.toRadians(-180))
                 // Sweep the stack

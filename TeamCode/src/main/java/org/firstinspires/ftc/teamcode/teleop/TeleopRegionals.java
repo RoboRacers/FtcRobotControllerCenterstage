@@ -84,6 +84,7 @@ public class TeleopRegionals extends LinearOpMode {
                 presetEnabled = false;
                 robot.slides.setManualPower(gamepad2.right_stick_y*retractionSpeed);
             } else if (!presetEnabled){
+                /*
                 robot.slides.setTargetPosition(
                         robot.slides.getCurrentPosition()
                 );
@@ -91,6 +92,9 @@ public class TeleopRegionals extends LinearOpMode {
                         SlidesSM.EVENT.ENABLE_RTP
                 );
                 robot.slides.setPower(rtpLockPower);
+
+                 */
+                robot.slides.setPower(0);
             }
 
             // Presets
@@ -154,6 +158,10 @@ public class TeleopRegionals extends LinearOpMode {
                 gamepad1.rumble(500);
                 gamepad2.rumble(500);
                 robot.intake.engageLock(true, true);
+            }
+            if(gamepad2.left_bumper){
+                gamepad2.rumble(500);
+                robot.intake.engageLock(false, true);
             }
 
             // Release deposit

@@ -79,7 +79,7 @@ public class RedCloseAuton extends LinearOpMode{
                 .splineToConstantHeading(new Vector2d(27.30, -50.00), Math.toRadians(90))
                 .waitSeconds(0.1)
                 // Go to backboard
-                .splineTo(new Vector2d(backBoardX-14, -38.5), Math.toRadians(0.00))
+                .splineTo(new Vector2d(backBoardX-24, -38.5), Math.toRadians(0.00))
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.drone.actuationServo.setPwmEnable();
                     robot.drone.fireDrone(true);
@@ -126,12 +126,13 @@ public class RedCloseAuton extends LinearOpMode{
                 .waitSeconds(0.75)
 //                .splineToConstantHeading(new Vector2d(-58.00, -8.50), Math.toRadians(0.00)) // go left and right at stack
 //                .splineToConstantHeading(new Vector2d(-58, -12.5), Math.toRadians(0.00)
-                .splineToConstantHeading(new Vector2d(-58.00, -14), Math.toRadians(0.00)) // Reverse from  starter stack
-                .waitSeconds(0.5)
                 .UNSTABLE_addTemporalMarkerOffset(0.75, () -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.setIntakePower(-0.75);
                 })
+                .splineToConstantHeading(new Vector2d(-58.00, -14), Math.toRadians(0.00)) // Reverse from  starter stack
+                .waitSeconds(0.5)
+
                 .splineToConstantHeading(new Vector2d(20.00, -10), Math.toRadians(0.00))  // Align to the center of the field
                 .UNSTABLE_addTemporalMarkerOffset(1, () -> {
                     robot.intake.flipDeposit();
@@ -185,10 +186,10 @@ public class RedCloseAuton extends LinearOpMode{
                 })
 
 
-                .splineToConstantHeading(new Vector2d(14.00, -32), Math.toRadians(90))   // Drop pixel
+                .splineToConstantHeading(new Vector2d(14.00, -33.5), Math.toRadians(90))   // Drop pixel
                 .waitSeconds(0.1)
                 .splineToConstantHeading(new Vector2d(20.00, -41), Math.toRadians(90))   // Reverse
-                .splineTo(new Vector2d(backBoardX-14, -38.5), Math.toRadians(0.00))
+                .splineTo(new Vector2d(backBoardX-24, -38.5), Math.toRadians(0.00))
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.drone.actuationServo.setPwmEnable();
                     robot.drone.fireDrone(true);
@@ -225,7 +226,7 @@ public class RedCloseAuton extends LinearOpMode{
 
                 //Go to starter stack
                 // .splineToConstantHeading(new Vector2d(18.00, 58.83), Math.toRadians(0.00))   // Reverse from backdrop
-                .splineToConstantHeading(new Vector2d(18.00, -8.00), Math.toRadians(0.00))  // Align to the center of the field
+                .splineToConstantHeading(new Vector2d(24.00, -5.00), Math.toRadians(0.00))  // Align to the center of the field
                 // .splineToConstantHeading(new Vector2d(-32.00, 8.00), Math.toRadians(0.00))  // Go past the trusses
                // .splineToConstantHeading(new Vector2d(-43.00, -9.00), Math.toRadians(0.00))  // Align with starter stack
 
@@ -234,16 +235,17 @@ public class RedCloseAuton extends LinearOpMode{
                 })
 
 
-                .splineToConstantHeading(new Vector2d(-57.0, -18), Math.toRadians(0.00)) // Go into starter stack
+                .splineToConstantHeading(new Vector2d(-57, -20), Math.toRadians(0.00)) // Go into starter stack
                 .waitSeconds(0.75)
                 //.splineToConstantHeading(new Vector2d(-56.00, -8.50), Math.toRadians(0.00)) // go left and right at stack
                 //.splineToConstantHeading(new Vector2d(-56, -12.5), Math.toRadians(0.00))
-                .splineToConstantHeading(new Vector2d(-57.00, -16), Math.toRadians(0.00))// Reverse from  starter stack
-                .waitSeconds(0.75)
                 .UNSTABLE_addTemporalMarkerOffset(0.75, () -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.setIntakePower(-0.8);
                 })
+                .splineToConstantHeading(new Vector2d(-57, -18), Math.toRadians(0.00))// Reverse from  starter stack
+                .waitSeconds(0.75)
+
                 .splineToConstantHeading(new Vector2d(15.00, -9.00), Math.toRadians(0.00))  // Align to the center of the field
 
                 .waitSeconds(0.5)
@@ -302,7 +304,7 @@ public class RedCloseAuton extends LinearOpMode{
                 .splineTo(new Vector2d(30.00, -45), Math.toRadians(-90))
                 .setReversed(false)
                 // Go to backboard
-                .splineTo(new Vector2d(backBoardX-14, -38.5), Math.toRadians(0.00))
+                .splineTo(new Vector2d(backBoardX-24, -38.5), Math.toRadians(0.00))
                 .UNSTABLE_addTemporalMarkerOffset(0, () -> {
                     robot.drone.actuationServo.setPwmEnable();
                     robot.drone.fireDrone(true);
@@ -345,14 +347,15 @@ public class RedCloseAuton extends LinearOpMode{
                 .waitSeconds(0.75)
                 //.splineToConstantHeading(new Vector2d(-54.00, -9.50), Math.toRadians(0.00)) // go left and right at stack
                 //.splineToConstantHeading(new Vector2d(-54, -14.5), Math.toRadians(0.00))
-                .splineToConstantHeading(new Vector2d(-56.00, -16), Math.toRadians(0.00)) // Reverse from  starter stack
-                .waitSeconds(0.75)
-                //add code to lock
-                //add code here to outtake extra
                 .UNSTABLE_addTemporalMarkerOffset(0.75, () -> {
                     robot.intake.engageLock(true,true);
                     robot.intake.setIntakePower(-0.8);
                 })
+                .splineToConstantHeading(new Vector2d(-56.00, -16), Math.toRadians(0.00)) // Reverse from  starter stack
+                .waitSeconds(0.75)
+                //add code to lock
+                //add code here to outtake extra
+
                 .splineToConstantHeading(new Vector2d(15.00, -9.00), Math.toRadians(0.00))  // Align to the center of the field
                 .UNSTABLE_addTemporalMarkerOffset(1, () -> {
                     robot.intake.flipDeposit();
